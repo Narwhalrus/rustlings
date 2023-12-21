@@ -5,13 +5,23 @@
 // Execute `rustlings hint primitive_types4` or use the `hint` watch subcommand
 // for a hint.
 
-// I AM NOT DONE
+fn first_word(s: &String) -> &str {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[..i];
+        }
+    }
+
+    &s[..]
+}
 
 #[test]
 fn slice_out_of_array() {
     let a = [1, 2, 3, 4, 5];
 
-    let nice_slice = ???
+    let nice_slice = &a[1..4];
 
     assert_eq!([2, 3, 4], nice_slice)
 }
